@@ -1,0 +1,10 @@
+{
+  "name": "ngx-flatpickr-v2",
+  "version": "1.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "moment": "^2.24.0",
+    "flatpickr": "^4.6.3"
+  }
+}
