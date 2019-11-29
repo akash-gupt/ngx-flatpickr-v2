@@ -17,7 +17,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "availability-calender": [
+        "dist/availability-calender"
+      ],
+      "availability-calender/*": [
+        "dist/availability-calender/*"
+      ],
+      "ngx-flatpickr-v2": [
+        "dist/ngx-flatpickr-v2"
+      ],
+      "ngx-flatpickr-v2/*": [
+        "dist/ngx-flatpickr-v2/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

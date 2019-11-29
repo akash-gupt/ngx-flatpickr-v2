@@ -23,13 +23,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -88,13 +83,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -106,9 +96,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -124,6 +112,73 @@
           }
         }
       }
-    }},
+    },
+    "availability-calender": {
+      "projectType": "library",
+      "root": "projects/availability-calender",
+      "sourceRoot": "projects/availability-calender/src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/availability-calender/tsconfig.lib.json",
+            "project": "projects/availability-calender/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/availability-calender/src/test.ts",
+            "tsConfig": "projects/availability-calender/tsconfig.spec.json",
+            "karmaConfig": "projects/availability-calender/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/availability-calender/tsconfig.lib.json",
+              "projects/availability-calender/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "ngx-flatpickr-v2": {
+      "projectType": "library",
+      "root": "projects/ngx-flatpickr-v2",
+      "sourceRoot": "projects/ngx-flatpickr-v2/src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-flatpickr-v2/tsconfig.lib.json",
+            "project": "projects/ngx-flatpickr-v2/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-flatpickr-v2/src/test.ts",
+            "tsConfig": "projects/ngx-flatpickr-v2/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-flatpickr-v2/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-flatpickr-v2/tsconfig.lib.json",
+              "projects/ngx-flatpickr-v2/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "ngx-availability-calender"
 }

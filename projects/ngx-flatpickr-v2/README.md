@@ -1,24 +1,67 @@
-# NgxFlatpickrV2
+# ngx-flatpickr
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+[![npm version](https://badge.fury.io/js/ngx-flatpickrjs.svg)](https://www.npmjs.com/package/ngx-flatpickrjs)
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name --project ngx-flatpickr-v2` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-flatpickr-v2`.
-> Note: Don't forget to add `--project ngx-flatpickr-v2` or else it will be added to the default project in your `angular.json` file. 
+flatpickr for Angular 2+
 
-## Build
+---
 
-Run `ng build ngx-flatpickr-v2` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Exemple:
 
-## Publishing
+```HTML
+<ngx-flatpickr
+  language="french"
+  placeholder="Please select a date"
+  [options]="options"
+  [default]="date"
+  (onDateSelect)="setDate($event)"
+  (onInit)="initialized($event)"
+  >
+</ngx-flatpickr>
+```
 
-After building your library with `ng build ngx-flatpickr-v2`, go to the dist folder `cd dist/ngx-flatpickr-v2` and run `npm publish`.
+- **language** _(Input)_:  
+  _the language of the flatpickr instance_
 
-## Running unit tests
+  All the locales from flatpickr are available, both full country names and codes can be used (Eg: "French" and "fr" both work)
 
-Run `ng test ngx-flatpickr-v2` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  A full list of all the locales can be seen [in the flatpickr github repository](https://github.com/flatpickr/flatpickr/tree/master/src/l10n)
 
-## Further help
+- **options** _(Input)_:  
+  _the placeholder text of the input field_
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  All the options available can be seen [on the flatpickr website](https://flatpickr.js.org/options/)
+
+- **onInit** _(Output)_:
+  _function launched after the picker is initialized_
+
+  The value returned in `$event` is the flatpickr instance
+
+- **default** _(Input)_:  
+  _the default date_
+
+- **onDateSelect** _(Output)_:
+  _function launched every time a date is selected_
+
+  The value returned in `$event` is an array containing the selected date(s)
+
+- **placeholder** _(Input)_:  
+  _the placeholder text of the input field_
+
+---
+
+**This component also works with FormControl :**
+
+```HTML
+<ngx-flatpickr
+  placeholder="Please select a date"
+  [formControl]="date"
+  >
+</ngx-flatpickr>
+```
+
+```JS
+this.date = new FormControl(new Date(), Validators.required)
+```
